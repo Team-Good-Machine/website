@@ -1,0 +1,22 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+  {{ header({
+    title: title,
+    summary: summary
+  }) }}
+
+<flow-content>
+  {{ content | safe }}
+
+  {{ cardGroup({
+    collection: collections[page.fileSlug],
+    label: "White paper"
+  }) if collections[page.fileSlug].length }}
+
+  {{ relatedLinks({
+    items: related
+  }) if related }}
+</flow-content>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+.box-list {
+  align-content: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  font: var(--font-lede);
+  gap: var(--space-gutter);
+  grid-column: bleed;
+  list-style: none;
+  margin-block: var(--space-l);
+  max-inline-size: max-content;
+  padding: 0;
+
+  li {
+    align-content: start;
+    background-color: var(--color-surface-loud);
+    border-radius: var(--border-radius);
+    color: var(--color-on-surface-loud);
+    flex: 1 0 15rem;
+    margin: 0;
+    padding: var(--space-inset);
+  }
+}

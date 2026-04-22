@@ -1,0 +1,61 @@
+{% from "back-link.njk" import backLink with context -%}
+{% from "banner.njk" import banner with context -%}
+{% from "card.njk" import card with context -%}
+{% from "card-group.njk" import cardGroup with context -%}
+{% from "case-studies.njk" import caseStudies with context -%}
+{% from "contentinfo.njk" import contentinfo with context -%}
+{% from "header.njk" import header with context -%}
+{% from "related-links.njk" import relatedLinks with context -%}
+{% from "skip-link.njk" import skipLink with context -%}
+
+{% if eleventyNavigation.key -%}
+  {% set crumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) -%}
+{% if crumbs.length -%}
+  {% set parentPage = crumbs[crumbs.length - 1] -%}
+{% endif -%}
+{% endif -%}
+
+<!doctype html>
+<html lang="{{ app.lang }}" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{%- if title %}{{ title }} · {% endif %}{{ app.name }}</title>
+
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/app.css">
+  <link rel="canonical" href="{{ page.url | htmlBaseUrl(baseUrl) }}">
+  <link rel="manifest" href="/app.webmanifest">
+  <link rel="icon" href="{{ app.icons[0].src }}" type="{{ app.icons[0].type }}">
+
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" name="description" content="{{ summary | default(app.description) }}">
+  <meta property="og:url" content="{{ page.url | htmlBaseUrl(baseUrl) }}">
+  {% if opengraphImage.src %}<meta name="og:image" content="{{ opengraphImage.src | htmlBaseUrl(baseUrl) }}">
+  {% endif %}
+  {% if opengraphImage.alt %}<meta property="og:image:alt" content="{{ opengraphImage.alt }}">{% endif %}
+
+  <meta name="supported-color-schemes" content="light dark">
+</head>
+
+<body>
+  {{ skipLink({
+    href: "#main",
+    text: "Skip to main content"
+  }) }}
+
+  {{ banner() }}
+
+  {{ backLink({
+    href: parentPage.url,
+    text: parentPage.title
+  }) if parentPage }}
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  {{ contentinfo() }}
+</body>
+</html>

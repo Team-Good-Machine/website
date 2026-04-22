@@ -1,0 +1,23 @@
+.box-quote {
+  background-color: var(--color-surface-loud);
+  border-radius: var(--border-radius);
+  grid-column: content;
+  margin-block-start: var(--space-l);
+  padding: var(--space-gutter);
+
+  blockquote {
+    border: 0;
+    color: var(--color-on-surface-loud);
+    padding-inline-start: 0;
+  }
+
+  figcaption {
+    color: var(--color-on-surface-loud-variant);
+    font: var(--font-caption);
+    margin-block-start: var(--space-m);
+  }
+
+  figcaption::before {
+    content: "— ";
+  }
+}

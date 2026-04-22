@@ -1,0 +1,149 @@
+:root {
+  /* Indicate presence of dark mode styles */
+  color-scheme: light dark;
+
+  /* Palette: Neutral */
+  --color-neutral-000: hsl(162deg 10% 100%);
+  --color-neutral-100: hsl(162deg 10% 95%);
+  --color-neutral-300: hsl(162deg 10% 70%);
+  --color-neutral-500: hsl(162deg 10% 50%);
+  --color-neutral-700: hsl(162deg 10% 30%);
+  --color-neutral-900: hsl(162deg 10% 7%);
+
+  /* Palette: Green */
+  --color-green-100: hsl(162deg 100% 95%);
+  --color-green-300: hsl(162deg 75% 70%);
+  --color-green-500: hsl(162deg 67% 50%);
+  --color-green-700: hsl(162deg 50% 25%);
+  --color-green-800: hsl(162deg 50% 15%);
+  --color-green-900: hsl(162deg 50% 8%);
+
+  /* Palette: Yellow */
+  --color-yellow-500: hsl(44deg 100% 45%);
+
+  /* Palette: Pink */
+  --color-pink-300: hsl(320deg 50% 70%);
+  --color-pink-500: hsl(320deg 50% 50%);
+  --color-pink-700: hsl(320deg 50% 30%);
+
+  /* Palette assignment: Surface */
+  --color-surface: light-dark(
+    var(--color-neutral-000),
+    var(--color-neutral-900)
+  );
+  --color-on-surface: light-dark(
+    var(--color-neutral-900),
+    var(--color-neutral-100)
+  );
+  --color-on-surface-variant: light-dark(
+    var(--color-green-700),
+    var(--color-green-300)
+  );
+
+  /* Palette assignment: Mute surface */
+  --color-surface-mute: light-dark(
+    var(--color-neutral-100),
+    var(--color-green-800)
+  );
+  --color-on-surface-mute: light-dark(
+    var(--color-green-900),
+    var(--color-neutral-100)
+  );
+  --color-on-surface-mute-variant: light-dark(
+    var(--color-green-700),
+    var(--color-green-300)
+  );
+
+  /* Palette assignment: Loud surface */
+  --color-surface-loud: var(--color-green-300);
+  --color-on-surface-loud: var(--color-green-900);
+  --color-on-surface-loud-variant: var(--color-green-700);
+
+  /* Palette assignment: Deep surface */
+  --color-surface-deep: var(--color-green-900);
+  --color-on-surface-deep: var(--color-green-500);
+  --color-on-surface-deep-variant: var(--color-green-100);
+
+  /* Palette assignment: Focus */
+  --color-surface-focus: var(--color-yellow-500);
+  --color-on-surface-focus: var(--color-neutral-900);
+
+  /* Palette assignment: Links */
+  --color-link: light-dark(var(--color-pink-500), var(--color-pink-300));
+  --color-link-hover: light-dark(var(--color-pink-700), var(--color-pink-500));
+  --color-link-active: light-dark(
+    var(--color-neutral-900),
+    var(--color-neutral-100)
+  );
+
+  /* Palette assignment: Rules */
+  --color-rule: var(--color-green-700);
+  --background-rule: url("/assets/untangled-lines.svg") left top / auto
+    no-repeat;
+
+  /* Typography */
+  --font-family-brand:
+    "Helvetica Neue", "Arial Nova", "Nimbus Sans", arial, sans-serif;
+  --font-family-sans: inter, sans-serif;
+  --font-family-monospace: ui-monospace, monospace;
+  --line-height-tight: 1.1;
+  --line-height-loose: 1.4;
+  --line-height-prose: clamp(1.4em, 3cqi, 1.6em);
+  --measure: 48rem;
+
+  /* Fluid type scale */
+  --font-size-base: 1rem; /* 16 */
+  --font-size-s: clamp(1.125rem, 0.5vi + 1rem, 1.25rem); /* 18 - 20 */
+  --font-size-m: clamp(1.125rem, 0.5vi + 1rem, 1.5rem); /* 18 - 24 */
+  --font-size-l: clamp(1.5rem, 1vi + 1.25rem, 1.6875rem); /* 24 - 27 */
+  --font-size-xl: clamp(1.5rem, 1vi + 1.25rem, 2rem); /* 24 - 32 */
+  --font-size-2xl: clamp(1.6875rem, 2vw + 1.5rem, 3.5rem); /* 27 - 56 */
+  --font-size-3xl: clamp(2.25rem, 3vw + 2.5rem, 6rem); /* 36 - 80 */
+
+  /* Font styles */
+  --font-logo: 900 1.5rem/0.9 var(--font-family-brand);
+  --font-poster: 800 var(--font-size-3xl) / 1 var(--font-family-sans);
+  --font-title: 800 var(--font-size-2xl) / var(--line-height-tight)
+    var(--font-family-sans);
+  --font-heading: 500 var(--font-size-xl) / var(--line-height-tight)
+    var(--font-family-sans);
+  --font-subhead: 600 normal var(--font-size-l) / var(--line-height-tight)
+    var(--font-family-sans);
+  --font-lede: normal var(--font-size-xl) / var(--line-height-tight)
+    var(--font-family-sans);
+  --font-body: normal var(--font-size-s) / var(--line-height-prose)
+    var(--font-family-sans);
+  --font-caption: 500 var(--font-size-base) / var(--line-height-prose)
+    var(--font-family-monospace);
+
+  /* Fluid space scale */
+  --space-xs: 0.375rem; /* 6 */
+  --space-s: clamp(0.375rem, 0.5vi + 0.25rem, 0.5625rem); /* 6 - 9 */
+  --space-m: clamp(0.75rem, 0.4vi + 0.6rem, 1.125rem); /* 12 - 18 */
+  --space-l: clamp(1.5rem, 1.2vi + 1.2rem, 2.8125rem); /* 24 - 45 */
+  --space-xl: clamp(2.25rem, 0.9vi + 3rem, 4.5rem); /* 36 - 72 */
+
+  /* Spacing assignments */
+  --space-gutter: var(--space-l);
+  --space-inset: var(--space-m);
+  --space-stack: var(--space-m);
+
+  /* Borders */
+  --border-radius: 1rem;
+  --border-width-hairline: 0.5px;
+  --border-width-thin: 1px;
+  --border-width-thick: 4px;
+
+  /* Layout */
+  --container-columns: 0 [bleed-start content-start] 1fr [content-end bleed-end]
+    0;
+
+  @media (min-width: 1200px) {
+    --container-columns: 1fr [bleed-start] minmax(var(--space-gutter), 3fr)
+      [content-start] minmax(0, var(--measure)) [content-end]
+      minmax(var(--space-gutter), 2fr) [bleed-end] 1fr;
+  }
+
+  /* Animation */
+  --transition-short: 0.15s;
+}

@@ -1,0 +1,95 @@
+.case-studies {
+  --color-link: var(--color-on-surface-mute);
+  --color-link-hover: var(--color-on-surface-mute-variant);
+
+  background-color: var(--color-surface-mute);
+  color: var(--color-on-surface-mute);
+  column-gap: var(--space-gutter);
+  display: grid;
+  grid-template-columns: var(--container-columns);
+  padding-block: var(--space-gutter);
+
+  h2 {
+    font: var(--font-heading);
+    grid-column: content;
+  }
+
+  h3 {
+    font: var(--font-title);
+    grid-column: content;
+    grid-column: content-start / bleed-end;
+    padding-inline-end: 2ex;
+    position: relative;
+  }
+
+  ul[role="list"] {
+    grid-column: bleed;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    padding-block-end: var(--space-gutter);
+    padding-block-start: var(--space-inset);
+
+    @media (min-width: 1200px) {
+      column-gap: var(--space-gutter);
+      display: grid;
+      grid-template-columns:
+        [bleed-start] minmax(var(--space-gutter), 3fr)
+        [content-start] minmax(0, var(--measure)) [content-end]
+        minmax(var(--space-gutter), 2fr) [bleed-end];
+    }
+
+    &::before {
+      background: var(--background-rule);
+      block-size: 64px;
+      content: "";
+      grid-column: bleed;
+      grid-row: -2;
+    }
+
+    &:nth-of-type(6n + 2)::before {
+      background-position: left -64px;
+    }
+
+    &:nth-of-type(6n + 3)::before {
+      background-position: left -128px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::after {
+      content: "→";
+      inset-block-start: 0;
+      inset-inline-end: var(--space-inset);
+      position: absolute;
+      transition: inset-inline-end var(--transition-short) ease-in;
+    }
+
+    &:hover::after {
+      inset-inline-end: 0;
+      transition: inset-inline-end var(--transition-short) ease-out;
+    }
+  }
+
+  p:first-of-type {
+    font: var(--font-caption);
+    grid-column: bleed-start / content-start;
+    grid-row: -1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  p {
+    font: var(--font-body);
+    grid-column: content;
+    margin-block-start: var(--space-inset);
+  }
+}

@@ -1,0 +1,34 @@
+.banner {
+  --color-link: var(--color-green-500);
+  --color-link-hover: var(--color-green-300);
+  --color-link-active: var(--color-green-100);
+
+  background-color: var(--color-surface-deep);
+  color: var(--color-on-surface-deep);
+  column-gap: var(--space-gutter);
+  display: grid;
+  grid-template-columns: var(--container-columns);
+  padding-block: var(--space-inset);
+
+  p {
+    align-items: center;
+    display: flex;
+    grid-column: bleed;
+    justify-content: space-between;
+  }
+
+  a[rel="home"] {
+    display: block;
+    font: var(--font-logo);
+    inline-size: min-content;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  a[href^="mailto:"] {
+    border: var(--border-width-thin) solid currentcolor;
+    border-radius: calc(infinity * 1px);
+    padding: var(--space-s) var(--space-m);
+    text-decoration: none;
+  }
+}

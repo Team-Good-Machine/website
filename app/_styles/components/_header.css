@@ -1,0 +1,30 @@
+.header {
+  background-color: var(--color-surface-mute);
+  color: var(--color-on-surface-mute);
+  display: grid;
+  gap: var(--space-gutter);
+  grid-template-columns: var(--container-columns);
+  padding-block: var(--space-gutter);
+
+  h1 {
+    font: var(--font-title);
+    grid-column: bleed;
+    letter-spacing: -0.0125em;
+
+    [data-font="poster"] & {
+      font: var(--font-poster);
+      max-inline-size: 20ch;
+    }
+  }
+
+  p {
+    color: var(--color-on-surface-mute-variant);
+    font: var(--font-lede);
+    grid-column: content;
+  }
+}
+
+.header:has(+ flow-content > figure:first-child) {
+  margin-block-end: calc(var(--space-gutter) * -3.5);
+  padding-block-end: calc(var(--space-gutter) * 3);
+}

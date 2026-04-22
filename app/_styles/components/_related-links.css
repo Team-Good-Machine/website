@@ -1,0 +1,23 @@
+.related-links {
+  padding-block-start: var(--space-gutter);
+
+  h3 {
+    font: var(--font-body);
+    font-weight: 600;
+    margin-block-start: var(--space-stack);
+  }
+
+  ul {
+    margin-block-start: var(--space-stack);
+  }
+
+  li {
+    & > * {
+      margin-block-start: 0;
+    }
+
+    &::marker {
+      content: "→ ";
+    }
+  }
+}

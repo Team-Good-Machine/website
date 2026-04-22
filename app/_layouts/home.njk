@@ -1,0 +1,18 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+  {{ header({
+    title: title,
+    summary: summary,
+    font: "poster"
+  }) }}
+
+  {{ caseStudies({
+    title: "Problems we've untangled…",
+    items: sections
+  }) }}
+
+<flow-content>
+  {{ content | safe }}
+</flow-content>
+{% endblock %}

@@ -1,0 +1,19 @@
+.skip-link {
+  background-color: var(--color-surface-focus);
+  color: var(--color-on-surface-focus);
+  display: block;
+  outline: none;
+  padding: var(--space-inset) var(--space-gutter);
+
+  /* Visually hidden until focused */
+  &:not(:focus):not(:active) {
+    block-size: 1px;
+    border: 0;
+    clip-path: inset(50%);
+    inline-size: 1px;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+}
