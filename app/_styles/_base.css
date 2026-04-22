@@ -1,0 +1,79 @@
+html {
+  background-color: var(--color-surface-deep);
+  font-feature-settings:
+    "liga" 1,
+    "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-loose);
+  margin: 0;
+  min-block-size: 100dvh;
+}
+
+main {
+  flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ol,
+ul,
+dl,
+blockquote,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+img,
+picture {
+  display: block;
+  max-inline-size: 100%;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 0.05em;
+  text-underline-offset: 0.1em;
+  transition: color var(--transition-short) ease-in;
+
+  &:hover {
+    color: var(--color-link-hover);
+    text-decoration-thickness: 0.1em;
+    transition: color var(--transition-short) ease-out;
+  }
+
+  &:active {
+    color: var(--color-link-active);
+  }
+
+  &:focus {
+    background-color: var(--color-surface-focus);
+    color: var(--color-on-surface-focus);
+    outline: var(--border-width-thick) solid var(--color-surface-focus);
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="424" height="360" viewBox="0 0 424 360">
+  <g fill="none" fill-rule="evenodd" transform="translate(32 32)">
+    <circle cx="180" cy="40" r="40" fill="#22634e"/>
+    <path stroke="#22634e" stroke-width="8" d="m190 43 138 206c5 8-1 19-10 19H42c-9 0-15-11-10-19L170 43c5-7 15-7 20 0Z"/>
+    <text fill="#e6ffff" font-family="ui-monospace, monospace" font-size="16" letter-spacing=".5">
+      <tspan x="160" y="47">SAIS</tspan>
+    </text>
+    <circle cx="40" cy="260" r="40" fill="#22634e"/>
+    <text fill="#e6ffff" font-family="ui-monospace, monospace" font-size="16" letter-spacing=".5">
+      <tspan x="20" y="266">CHIS</tspan>
+    </text>
+    <circle cx="320" cy="260" r="40" fill="#22634e"/>
+    <text fill="#e6ffff" font-family="ui-monospace, monospace" font-size="16" letter-spacing=".5">
+      <tspan x="305" y="266">GPs</tspan>
+    </text>
+  </g>
+</svg>

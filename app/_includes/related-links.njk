@@ -1,0 +1,15 @@
+{% macro relatedLinks(params) %}
+<section class="related-links">
+  <h2>{{ params.title | default("Related links") }}</h2>
+  <ul>
+  {% for item in params.items %}
+    <li>
+      <h3>
+        <a href="{{ item.href }}">{{ item.title | markdown("inline") }}</a>
+      </h3>
+      {{ item.summary | markdown }}
+    </li>
+  {% endfor %}
+  </ul>
+</section>
+{% endmacro %}

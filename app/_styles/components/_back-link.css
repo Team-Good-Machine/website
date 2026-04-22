@@ -1,0 +1,23 @@
+.back-link {
+  --color-link: var(--color-on-surface-mute);
+
+  background-color: var(--color-surface-mute);
+  color: var(--color-on-surface-mute);
+  display: grid;
+  gap: var(--space-gutter);
+  grid-template-columns: var(--container-columns);
+  padding-block-start: var(--space-gutter);
+
+  a {
+    font: var(--font-caption);
+    grid-column: bleed;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::before {
+      content: "← ";
+      font-family: var(--font-family-sans);
+    }
+  }
+}

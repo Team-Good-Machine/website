@@ -1,0 +1,6 @@
+{% macro header(params) %}
+<header class="header" data-font="{{ params.font | default("title") }}">
+  <h1>{{ params.title | markdown("inline") }}</h1>
+  {{ params.summary | markdown }}
+</header>
+{% endmacro %}

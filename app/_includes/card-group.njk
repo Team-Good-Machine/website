@@ -1,0 +1,12 @@
+{% macro cardGroup(params) %}
+<section class="card-group">
+{% for item in params.collection %}
+  {{ card({
+    href: item.url,
+    label: params.label,
+    title: item.data.title,
+    summary: item.data.summary
+  }) }}
+{% endfor %}
+</section>
+{% endmacro %}

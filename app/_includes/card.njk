@@ -1,0 +1,11 @@
+{% macro card(params) %}
+<article class="card">
+  <hgroup>
+    <h3>
+      <a href="{{ params.href }}">{{ params.title | markdown("inline") }}</a>
+    </h3>
+    <p>{{ params.label | markdown("inline") }}</p>
+  </hgroup>
+  {{ params.summary | markdown }}
+</article>
+{% endmacro %}

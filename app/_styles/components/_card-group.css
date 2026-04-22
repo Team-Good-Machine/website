@@ -1,0 +1,10 @@
+.card-group {
+  align-content: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-gutter);
+
+  > * {
+    flex: 1 0 15rem;
+  }
+}
