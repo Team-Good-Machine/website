@@ -1,0 +1,23 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+<div class="c-poster u-container">
+  <h1 class="c-poster__title">{{ title }}</h1>
+  <p class="c-poster__lede">{{ summary }}</p>
+
+  <h2 class="c-poster__subhead">Problems we’ve untangled…</h2>
+  <ul class="c-summary__list" role="list">
+  {% for section in sections %}
+    <li class="c-summary__item">
+      <h3>{{ section.title }}</h3>
+      <p class="c-summary__org">{{ section.org }}</p>
+      <a href="{{ section.href }}">View case study</a>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+
+<div class="s-prose u-container">
+  {{ content | safe }}
+</div>
+{% endblock %}

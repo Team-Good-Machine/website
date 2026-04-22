@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ app.lang }}" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{%- if title %}{{ title }} · {% endif %}{{ app.name }}</title>
+
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="stylesheet" href="/assets/app.css">
+  <link rel="canonical" href="{{ page.url | htmlBaseUrl(baseUrl) }}">
+  <link rel="manifest" href="/app.webmanifest">
+  <link rel="icon" href="{{ app.icons[0].src }}" type="{{ app.icons[0].type }}">
+
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" name="description" content="{{ summary | default(app.description) }}">
+  <meta property="og:url" content="{{ page.url | htmlBaseUrl(baseUrl) }}">
+  <meta name="supported-color-schemes" content="light dark">
+  <meta name="robots" content="index, follow">
+</head>
+
+<body>
+  {% include "skip-link.njk" %}
+
+  {% include "banner.njk" %}
+
+  <main id="main">
+    {% block main %}{% endblock %}
+  </main>
+
+  {% include "contentinfo.njk" %}
+</body>
+</html>

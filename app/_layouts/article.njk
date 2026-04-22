@@ -1,0 +1,46 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+<header class="c-prologue u-container">
+  {% set crumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
+{% if crumbs.length %}
+  {% set parentPage = crumbs[crumbs.length - 1] %}
+  <a href="{{ parentPage.url }}">← {{ parentPage.title }}</a>
+{% endif %}
+
+  <h1 class="c-prologue__title">{{ title }}</h1>
+  {% if summary %}<p class="c-prologue__lede">{{ summary }}</p>{% endif %}
+</header>
+
+<div class="s-prose u-container">
+  {{ content | safe }}
+</div>
+
+{% if collections[page.fileSlug].length %}
+<div class="c-summary u-container">
+  <h2 class="c-summary__title">White papers</h2>
+  <ul class="c-summary__list" role="list">
+  {% for item in collections[page.fileSlug] %}
+    <li class="c-summary__item">
+      <h3><a href="{{ item.url }}">{{ item.data.title }}</a></h3>
+      <p>{{ item.data.summary }}</p>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+{% if related %}
+<div class="c-summary u-container">
+  <h2 class="c-summary__title">Related links</h2>
+  <ul class="c-summary__list" role="list">
+  {% for item in related %}
+    <li class="c-summary__item">
+      <h3><a href="{{ item.href }}">{{ item.title }}</a></h3>
+      <p>{{ item.summary }}</p>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+{% endblock %}
