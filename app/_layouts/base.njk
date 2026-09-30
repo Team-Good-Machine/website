@@ -29,7 +29,7 @@
   <link rel="manifest" href="/app.webmanifest">
   <link rel="icon" href="{{ app.icons[0].src }}" type="{{ app.icons[0].type }}">
 
-  <meta property="og:title" content="{{ title }}">
+  <meta property="og:title" content="{{ app.name if layout == "home" else title }}">
   <meta property="og:description" name="description" content="{{ summary | default(app.description) }}">
   <meta property="og:url" content="{{ page.url | htmlBaseUrl(baseUrl) }}">
   {% if opengraphImage.src %}<meta name="og:image" content="{{ opengraphImage.src | htmlBaseUrl(baseUrl) }}">
