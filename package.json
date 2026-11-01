@@ -23,7 +23,7 @@
     "lint:fix": "npm run lint:prettier:fix && npm run lint:js:fix && npm run lint:css:fix"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy": "^3.1.7",
     "@11ty/eleventy-navigation": "^1.0.5",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.6.0",
     "markdown-it": "^15.0.2",
