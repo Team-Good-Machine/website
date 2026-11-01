@@ -26,7 +26,7 @@
     "@11ty/eleventy": "^3.1.6",
     "@11ty/eleventy-navigation": "^1.0.5",
     "@11tyrocks/eleventy-plugin-lightningcss": "^1.6.0",
-    "markdown-it": "^15.0.2",
+    "markdown-it": "^15.0.3",
     "markdown-it-attribution": "^0.1.4",
     "markdown-it-attrs": "^5.0.1",
     "markdown-it-deflist": "^4.0.0",
